@@ -11,8 +11,8 @@ const transactionDAO = new TransactionDAO();
 const membersDAO = new MembersDAO();
 const parser = new Parser();
  
-bot.onText('\/разлулить', (msg) => {
-    bot.sendMessage(msg.chat.id, 'Разрулил!');
+bot.onText(/\/разрулить/, (msg) => {
+    bot.sendMessage(msg.chat.id, 'разрулил!');
 });
 
 bot.onText(/\/add (.+)/, (msg, match) => {
