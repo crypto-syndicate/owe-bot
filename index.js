@@ -1,11 +1,12 @@
 require('dotenv').config();
 const TelegramBot = require('node-telegram-bot-api');
 const handler = require('./handler');
-
+const TransactionDAO = require('./TransactionDAO');
 
 const token = process.env.TOKEN;
 // Create a bot that uses 'polling' to fetch new updates
 const bot = new TelegramBot(token, {polling: true});
+const transactionDAO = new TransactionDAO();
  
 bot.onText(/\/add (.+)/, (msg, match) => {
     const chatId = msg.chat.id;
@@ -15,7 +16,7 @@ bot.onText(/\/add (.+)/, (msg, match) => {
             console.error(err);
             process.exit(1);
         });
-
+        
 
   // send back the matched "whatever" to the chat
 //   bot.sendMessage(chatId, resp);
