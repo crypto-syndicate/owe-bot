@@ -3,11 +3,11 @@ class MemoryMembersDAO {
         this.memory = [];
     }
 
-    joinUser(userId, chatId, options) {
+    joinUser(userId, chatId, options = {}) {
         this.memory.push({
             user: {
                 id: userId,
-                aliases: options.aliases,
+                ...options,
             },
             chatId,
         });
