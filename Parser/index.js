@@ -1,16 +1,3 @@
-
-class Parser {
-    parse(text) {
-        return [{
-            to: 123,
-            from: 321,
-            amount: 10,
-            currency: 'UAH',
-            description: 'за еду'
-        }];
-    }
-}
-
 /**
  * Examples:
  * Дима должен мне 10 гривен за еду
@@ -31,3 +18,17 @@ class Parser {
  * Жека ничего не закинул
  * 
  */
+
+class Parser {
+    parse(text) {
+        return [{
+            to: 321,
+            from: 123,
+            amount: 10,
+            currency: 'UAH',
+            description: 'за еду'
+        }];
+    }
+}
+
+module.exports = Parser;

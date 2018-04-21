@@ -9,6 +9,7 @@ const bot = new TelegramBot(token, {polling: true});
 const transactionDAO = new TransactionDAO();
  
 bot.onText(/\/add (.+)/, (msg, match) => {
+    console.log(msg);
     const chatId = msg.chat.id;
     const resp = match[1]; // the captured "whatever"
     handler(resp)

@@ -11,3 +11,5 @@ class MemoryTransactionDAO {
         return this.memory;
     }
 }
+
+module.exports = MemoryTransactionDAO;
