@@ -7,11 +7,11 @@ module.exports = async function handler(text) {
 class Parser {
     parse(text) {
         return {
-            who: 123,
-            to: 321,
+            to: 123,
+            from: 321,
             amount: 10,
             currency: 'UAH',
-            description: 'за еду',
+            description: 'за еду'
         }
     }
 }
