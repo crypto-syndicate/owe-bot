@@ -6,16 +6,17 @@ class Calculator {
         this.transactionsDAO = transactionsDAO;
     }
     calculate(userId) {
+        const accounts = {};
+
         const userTransactions = this.transactionsDAO
             .getTransactions()
             .filter(k => k.to === userId || k.from === userId);
 
         const groupedUserTransactions = _.groupBy(userTransactions, 'currency');
-        const accounts = {};
 
         for (const [currency, transactions] of Object.entries(groupedUserTransactions)) {
 
-            const currencyAccounts = {currency, accounts: []};
+            const currencyAccounts = { currency, accounts: [] };
 
             for (const transaction of transactions){
                 if (transaction.from === userId) {
